@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <meta charset="utf-8">
+    <title>Example Venn.js</title>
+    <h1 style="text-align: center;">Cramer-Tersect Venn Diagram</h1>
+    <h3 style="text-align: center;">Tomato.tsi</h3>
+    <script src="http://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="venn.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/noty@3.2.0-beta/lib/noty.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty@3.2.0-beta/lib/noty.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/noty@3.2.0-beta/lib/themes/light.css">
+
+</head>
+
+<body>
+    <br>
+    <br>
+    <div class="containerDIV">
+
+        <div class="sidenav">
+            <div>
+                <input type="text" id="searchBox" placeholder="Search for samples...">
+                <span style="display:inline-block; width: 5px;"></span>
+                <button id="wildbutton" type="submit">Add Group</button>
+                <br>
+                <br>
+                <label for="A">File set 'A'</label><input type="radio" name="fileset" id="A" value="File A">
+                <span style="display:inline-block; width: 5px;"></span>
+                <label for="B">File set 'B'</label></label><input type="radio" name="fileset" id="B" value="File B">
+
+            </div>
+            <h4>Samples from TSI file</h4>
+            <div class="divTable">
+                <table id="genomeTable" align="center"></table>
+            </div>
+            <br>
+            <br>
+            <button id="clearFile">Clear all files selected</button>
+            <button id="clearOperations">Clear all operations</button>
+            <br>
+            <br>
+            
+        </div>
+        <div class="main">
+            <div id="venn"></div>
+            <div style="text-align: center;">
+                <output>Save As...</output>
+                <input type="text" id="filepath" />
+                <button id="submit" type="submit">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div id="tooltipdiv">
+        <table id="sampleA" class="venntooltip">
+            <tr>
+                <th><button id="hideA">&times;</button> Samples in A </th>
+            </tr>
+            <tr id="hereA"></tr>
+        </table>
+        <table id="sampleB" class="venntooltip">
+            <tr>
+                <th><button id="hideB">&times;</button> Samples in B</th>
+            </tr>
+            <tr id="hereB"></tr>
+
+        </table>
+    </div>
+</body>
+<script src="example_venn.js"></script>
+
+
+</html>
