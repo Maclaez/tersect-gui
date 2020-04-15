@@ -1,15 +1,17 @@
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
+// const bodyParser = require('body-parser');
+// var urlencodedParser = bodyParser.urlencoded({ extended: false });
+var urlencodedParser = express.urlencoded({ extended: false });
 const fs = require('fs');
-var { spawn } = require('child_process');
+// var { spawn } = require('child_process');
+var spawn = require('child_process').spawn;
 
 const port = 3000;
 const path_to_project = ""; //add path to project directory
 app.use(express.static(path_to_project));
 
-app.listen(port, function () {
+app.listen(port,'0.0.0.0', function () {
   console.log('Application deployed');
 })
 
